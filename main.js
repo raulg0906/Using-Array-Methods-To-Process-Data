@@ -25,7 +25,6 @@ document.querySelector("#answer1").innerHTML = `the average price for all items 
 }})
 var itemsinbetween = inbetween.map(function(item){
     return item.title;
-
 });
  console.log (itemsinbetween)
 
@@ -63,5 +62,18 @@ var itemsinbetween = inbetween.map(function(item){
 
  document.querySelector("#answer4").innerHTML = `${woodtitle}`
 
- //question 5
- 
+ //Question 5
+
+ var eightormore =
+ items
+    .filter(item => item.materials.length >= 8)
+    .map(item => `${item.title} has ${item.materials.length} materials:<br>${item.materials.join('<br>')}`)
+
+
+    document.querySelector("#answer5").innerHTML = `${eightormore}`
+
+ //question 6
+
+ var madebysellers = items.filter(item => item.who_made === "i_did").length
+
+ document.querySelector("#answer6").innerHTML = `${madebysellers} were made by their sellers`
